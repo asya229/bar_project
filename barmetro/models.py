@@ -15,3 +15,11 @@ class Mainpage(models.Model):
 
     def __str__(self):
         return self.title
+
+class coord_metro(models.Model):
+    metroname = models.CharField(max_length=200)
+    langituge = models.TextField()
+    latitude = models.TextField()
+
+    def __str__(self):
+        return self.title
