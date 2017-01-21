@@ -22,4 +22,4 @@ class coord_metro(models.Model):
     latitude = models.TextField()
 
     def __str__(self):
-        return self.title
+        return self.metroname
