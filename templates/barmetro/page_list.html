@@ -6,5 +6,17 @@
 </head>
 <body>
 здесь будет что та
+
+{% for coord in coords %}
+<div>
+<p>Название: {{ coord.metroname }}</p>
+<p>Долгота: {{ coord.longitude }}</p>
+<p>Широта: {{ coord.latitude }}</p>
+------------------------
+</div>
+{% endfor %}
+
+
+
 </body>
 </html>
