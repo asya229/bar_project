@@ -23,3 +23,17 @@ class CoordMetro(models.Model):
 
     def __str__(self):
         return self.metroname
+
+class CoordBar(models.Model):
+    barname = models.CharField(max_length=200)
+    longitude = models.TextField()
+    latitude = models.TextField()
+    address = models.TextField()
+    district = models.TextField()
+    area = models.TextField()
+    phone_number = models.TextField()
+
+
+
+    def __str__(self):
+        return self.barname
