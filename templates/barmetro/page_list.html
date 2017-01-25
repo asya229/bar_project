@@ -3,9 +3,8 @@
 {% block content %}
 {% for coord in coords %}
 <div>
-<h3>Название: {{ coord.metroname }}</h3>
-<p>Долгота: {{ coord.longitude }}</p>
-<p>Широта: {{ coord.latitude }}</p>
+<h3>Название: <a href="{% url 'page_metro' pk=coord.pk %}">{{ coord.metroname }}</a></h3>
+
 ------------------------
 </div>
 {% endfor %}
