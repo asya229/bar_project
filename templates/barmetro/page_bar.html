@@ -1,11 +1,13 @@
 {% extends 'barmetro/base.html' %}
 
 {% block content %}
-    <h1>Куда идём? {{ bar.barname }}</h1>
-    <p>Долгота: {{ bar.longitude }}</p>
-    <p>Широта: {{ bar.latitude }}</p>
-    <p>Адрес: {{ bar.address }}</p>
-    <p>Телефон: {{ bar.phone_number }}</p>
-    <p>Где это вообще? {{ bar.district }}</p>
-    <p>АО: {{ bar.area }}</p>
+    <table class="table table-striped">
+        <tr><td>Куда идём?</td> <td>{{ bar.barname }}</td></tr>
+        <tr><td>Долгота:</td><td> {{ bar.longitude }}</td></tr>
+        <tr><td>Широта: </td><td>{{ bar.latitude }}</td></tr>
+        <tr><td>Адрес:</td><td> {{ bar.address }}</td></tr>
+        <tr><td>Телефон:</td><td> {{ bar.phone_number }}</td></tr>
+        <tr><td>Где это вообще?</td><td> {{ bar.district }}</td></tr>
+        <tr><td>АО:</td><td> {{ bar.area }}</td></tr>
+    </table>
 {% endblock content %}
