@@ -17,10 +17,6 @@ def calc_distance(metro, bar):
 class Command(BaseCommand):
     help = 'Precalculates bars for distances'
 
-    def add_arguments(self, parser):
-        parser.add_argument('some_arg', nargs='+', type=str)
-
-
     def handle(self, *args, **options):
         for metro in CoordMetro.objects.all():
             for bar in CoordBar.objects.all():

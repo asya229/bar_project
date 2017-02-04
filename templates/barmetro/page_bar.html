@@ -1,10 +1,9 @@
 {% extends 'barmetro/base.html' %}
 
+
 {% block content %}
-    <table class="table table-striped">
+    <table class="table table-condensed">
         <tr><td>Куда идём?</td> <td>{{ bar.barname }}</td></tr>
-        <tr><td>Долгота:</td><td> {{ bar.longitude }}</td></tr>
-        <tr><td>Широта: </td><td>{{ bar.latitude }}</td></tr>
         <tr><td>Адрес:</td><td> {{ bar.address }}</td></tr>
         <tr><td>Телефон:</td><td> {{ bar.phone_number }}</td></tr>
         <tr><td>Где это вообще?</td><td> {{ bar.district }}</td></tr>
