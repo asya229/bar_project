@@ -20,6 +20,7 @@ class CoordMetro(models.Model):
     metroname = models.CharField(max_length=200)
     longitude = models.TextField()
     latitude = models.TextField()
+    color = models.CharField(max_length=50, null=True)
     distance_300 = models.ManyToManyField('CoordBar', related_name='metro_300')
     distance_500 = models.ManyToManyField('CoordBar', related_name='metro_500')
     distance_1000 = models.ManyToManyField('CoordBar',related_name='metro_1000')

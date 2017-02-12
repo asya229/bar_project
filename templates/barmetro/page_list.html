@@ -5,55 +5,49 @@
     <br> <br> <br>
 
     <div class="row">
-        <div class="col-xs-2">
-            <select class="form-control">
+{#        <div class="col-xs-2">#}
+{#            <select class="form-control">#}
+{##}
+{##}
+{#                {% for coord in coords %}#}
+{#        сдедать цикл для селекта, сделать форму, вставить csrf_token#}
+{#        <option value="1" style="color: yellow;">Авиамоторная</option>#}
+        for metro in metro_station
+            metro.id metro.metroname metro.color
+        <option value="{{ metro.id }}" style="color:{{ metro.color }};">{{ metro.metroname }}</option>#}
+{#                <option>#}
+{#                {{ coord.metroname }}</option>#}
+{#                {% endfor %}#}
+{#            </select>#}
+{#        </div>#}
 
 
-                {% for coord in coords %}
-                <option><a href="{% url 'page_metro' pk=coord.pk %}">
-                {{ coord.metroname }}</a></option>
-                {% endfor %}
-            </select>
-        </div>
+    <form action="/result/" method="post">
+        {% csrf_token %}
+        {{ form }}
+    <input type="submit" value="OK">
+    </form>
 
 
-        <div class="col-xs-2">
 
-            <select class="form-control">
-                <option>до 300 метров</option>
-                <option>до 500 метров</option>
-                <option>до 1 км</option>
-
-            </select>
-        </div>
-        <div class="col-xs-2">
-            <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
-        </div>
-
-        <button type="submit" class="btn btn-default">Поиск</button>
+{#        <button type="submit" class="btn btn-default">Поиск</button>#}
     </div>
 
 
 
-    <div class="row">
-        <div class="col-md-9 col-md-push-3">
-
-        </div>
-
-        <div class="col-md-3 col-md-pull-9">
-            {% for coord_bar in coords_for_bar %}
-            <h3>Название: <a href="{% url 'page_bar' pk=coord_bar.pk %}">
-                {{ coord_bar.barname }}</a></h3>
-            {% endfor %}
-        </div>
-
-    </div>
+{#    <div class="row">#}
+{#        <div class="col-md-9 col-md-push-3">#}
+{##}
+{#        </div>#}
+{##}
+{#        <div class="col-md-3 col-md-pull-9">#}
+{#            {% for coord_bar in coords_for_bar %}#}
+{#            <h3>Название: <a href="{% url 'page_bar' pk=coord_bar.pk %}">#}
+{#                {{ coord_bar.barname }}</a></h3>#}
+{#            {% endfor %}#}
+{#        </div>#}
+{##}
+{#    </div>#}
 
 
 {% endblock content %}

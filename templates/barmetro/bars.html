@@ -1,0 +1,40 @@
+{% extends 'barmetro/base.html' %}
+{% block content %}
+
+<div class="container-fluid">
+<div class="row">
+
+<table>
+
+
+<div class="col-xs-6 col-sm-4"><span>300</span><br>
+    {% for bar in bars_300 %}
+       <a href="{% url 'page_bar' bar.id %}">{{ bar.barname }}</a><br>
+    {% endfor %}
+</div>
+
+
+
+    <div class="col-xs-6 col-sm-4"><span>500</span><br>
+    {% for bar in bars_500 %}
+        <a href="{% url 'page_bar' bar.id %}">{{ bar.barname }}</a><br>
+    {% endfor %}
+  </div>
+
+
+
+
+    <div class="col-xs-6 col-sm-4"><span>100</span><br>
+
+    {% for bar in bars_1000 %}
+        <a href="{% url 'page_bar' bar.id %}">{{ bar.barname }}</a><<br>
+    {% endfor %}
+
+  </div>
+
+</table>
+</div>
+
+
+{% endblock %}
+
