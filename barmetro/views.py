@@ -9,8 +9,8 @@ from .forms import BarSearchFrom
 def page_list(request):
     coords = CoordMetro.objects.all()
     coords_for_bar = CoordBar.objects.all()
-    form_choice_metro = BarSearchFrom()
-    context = {'metro_station': coords, 'coords_for_bar': coords_for_bar, 'form_choice_metro': form_choice_metro}
+    # form_choice_metro = BarSearchFrom()
+    context = {'metro_station': coords, 'coords_for_bar': coords_for_bar,}
     return render(request, 'barmetro/page_list.html', context)
 
 def page_metro(request, pk):

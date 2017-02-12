@@ -6,7 +6,7 @@
 
 {#    <div class="row">#}
 {#        <div class="col-xs-2">#}
-{#            <select class="form-control">#}
+{#            #}
 {##}
 {##}
 {#                {% for coord in coords %}#}
@@ -29,24 +29,25 @@
 {#        </div>#}
 
 
-    <form action="/result/" method="post">
-        {% csrf_token %}
-        {% for metro in form_choice_metro %}
+    <form action="/result/" method="post" class="form-signin" role="form">
+
+    {% csrf_token %}
+
+     <select>
+        {% for metro in metro_station %}
 
         <option value="{{ metro.id }}" style="color:{{ metro.color }};">{{ metro }}</option>
 
-            {{ metro.label_tag }}
-            {{ metro }}
-
-
         {% endfor %}
+    </select>
 
+       <input type="submit" value="OK">
 
-    <input type="submit" value="OK">
     </form>
 
 
-
+{#          {{ metro.label_tag }}#}
+{#            {{ metro }}#}
 {#        <button type="submit" class="btn btn-default">Поиск</button>#}
 {#    </div>#}
 
