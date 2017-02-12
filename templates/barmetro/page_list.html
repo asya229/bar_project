@@ -31,7 +31,17 @@
 
     <form action="/result/" method="post">
         {% csrf_token %}
-        {{ form_choice_metro }}
+        {% for metro in form_choice_metro %}
+
+        <option value="{{ metro.id }}" style="color:{{ metro.color }};">{{ metro }}</option>
+
+            {{ metro.label_tag }}
+            {{ metro }}
+
+
+        {% endfor %}
+
+
     <input type="submit" value="OK">
     </form>
 
