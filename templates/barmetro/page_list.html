@@ -33,13 +33,13 @@
 
     {% csrf_token %}
 
-     <select>
+     <select name="metro_station">
         {% for metro in metro_station %}
 
         <option value="{{ metro.id }}" style="color:{{ metro.color }}; font-size: medium; font-weight: bold">{{ metro }}</option>
 
         {% endfor %}
-    </select>
+     </select>
 
 
        <input type="submit" value="OK">
@@ -49,15 +49,15 @@
 
 
 
-    <form action="/result/" method="post" class="form-signin" role="form">
-    {% csrf_token %}
-
-        {% for metro1 in form_choice_metro %}
-        {{ metro1 }}
-        {% endfor %}
-
-        <input type="submit" value="OK">
-    </form>
+{#    <form action="/result/" method="post" class="form-signin" role="form">#}
+{#    {% csrf_token %}#}
+{##}
+{#        {% for metro1 in form_choice_metro %}#}
+{#        {{ metro1 }}#}
+{#        {% endfor %}#}
+{##}
+{#        <input type="submit" value="OK">#}
+{#    </form>#}
 
 
 {#          {{ metro.label_tag }}#}
