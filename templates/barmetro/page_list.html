@@ -41,8 +41,22 @@
         {% endfor %}
     </select>
 
+
        <input type="submit" value="OK">
 
+    </form>
+
+
+
+
+    <form action="/result/" method="post" class="form-signin" role="form">
+    {% csrf_token %}
+
+        {% for metro1 in form_choice_metro %}
+        {{ metro1 }}
+        {% endfor %}
+
+        <input type="submit" value="OK">
     </form>
 
 
