@@ -38,6 +38,7 @@ def bar_view(request):
            print(bars_300)
            bars_500 = selected_station.distance_500.all()
            bars_1000 = selected_station.distance_1000.all()
+           print(bars_1000)
 
 
    else:
