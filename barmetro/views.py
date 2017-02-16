@@ -32,12 +32,14 @@ def bar_view(request):
        bars_500 =[]
        bars_1000 =[]
        selected_station = []
+       metro_id = []
 
        if form.is_valid():
            print(form.cleaned_data['metro_station'])
            selected_station = form.cleaned_data['metro_station']
+           print('пост', request.POST)
            bars_300 = selected_station.distance_300.all()
-           print(bars_300)
+           #print(bars_300)
            bars_500 = selected_station.distance_500.all()
            bars_1000 = selected_station.distance_1000.all()
 
@@ -48,6 +50,7 @@ def bar_view(request):
        bars_500 = []
        bars_1000 = []
        selected_station = []
+       metro_id = []
        #form = BarSearchFrom()
    return render(request,
        'barmetro/bars.html',
@@ -57,6 +60,7 @@ def bar_view(request):
            'bars_500': bars_500,
            'bars_1000': bars_1000,
            'selected_station': selected_station,
+           'metro_id': metro_id,
        }
    )
 
