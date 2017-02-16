@@ -1,2 +1,4 @@
-Django==1.10.2
-gunicorn==19.3.0
+Django==1.10.5
+geopy==1.11.0
+SQLAlchemy==1.1.4
+wheel==0.24.0
