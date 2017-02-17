@@ -25,7 +25,7 @@ SECRET_KEY = '23scy+@ccx9mrqs0q4&8wsio=sd*s=ghru24p(hj5pd6tebdxu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.pymetro.ru', 'pymetro.ru']
+ALLOWED_HOSTS = ['www.pymetro.ru', 'pymetro.ru', '127.0.0.1']
 
 
 # Application definition
