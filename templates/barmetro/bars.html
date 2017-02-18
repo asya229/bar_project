@@ -36,6 +36,25 @@
 </table>
 </div>
 
+</div>
+    <div class="container-fluid">
+    {# Map 2#}
 
+    <h3>Ближайшие бары на карте</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var metro = {lat: {{selected_station.latitude}}, lng: {{selected_station.longitude}}};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: metro
+        });
+        map.data.loadGeoJson('{%url 'geodata_metro' pk=selected_station.pk %}');
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMEiAVzmyF1Rsqo1ZzgIU7Mb2LaBGs_xQ&callback=initMap">
+    </script>
+    </div>
 {% endblock %}
 

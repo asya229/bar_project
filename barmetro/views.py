@@ -3,7 +3,7 @@ from .models import CoordMetro,CoordBar
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from .forms import BarSearchFrom
-
+from django.http import JsonResponse
 
 
 def page_list(request):
@@ -64,7 +64,27 @@ def bar_view(request):
        }
    )
 
+def geodata_metro(request, pk):
+    station = get_object_or_404(CoordMetro, pk=pk)
+    s300 = station.distance_300.all()
+    s500 = station.distance_500.all()
+    s1000 = station.distance_1000.all()
+    features = []
+    data = {}
+    for bar in s300:
+        features.append({"type": "Feature", "geometry": {"type": "Point", "coordinates": [float(bar.longitude), float(bar.latitude)]},"properties": {}})
+        data = {"type": "FeatureCollection", "features": features}
+    #return JsonResponse(data, safe=False)
 
+    for bar in s500:
+        features.append({"type": "Feature", "geometry": {"type": "Point", "coordinates": [float(bar.longitude), float(bar.latitude)]},"properties": {}})
+        data = {"type": "FeatureCollection", "features": features}
+    #return JsonResponse(data, safe=False)
+
+    for bar in s1000:
+        features.append({"type": "Feature", "geometry": {"type": "Point", "coordinates": [float(bar.longitude), float(bar.latitude)]},"properties": {}})
+        data = {"type": "FeatureCollection", "features": features}
+    return JsonResponse(data, safe=False)
 
 
 
